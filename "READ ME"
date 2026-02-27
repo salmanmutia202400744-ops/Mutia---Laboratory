@@ -1,0 +1,31 @@
+1. How was state managed in the navbar?
+
+State was managed by using JavaScript variables to keep track of the current condition of the application.
+For example, a boolean variable was used to determine whether the mobile menu was open or closed, and another variable was used to store which navigation link was currently active. Whenever a user interacted with the navbar (such as clicking the hamburger menu or a navigation link), these state variables were updated, and the user interface changed accordingly. This ensured that the navbar behavior remained consistent with user actions.
+
+2. Where was asynchronous behavior used in the project?
+
+Asynchronous behavior was demonstrated through the use of setTimeout() when displaying notification messages.
+When a navigation link was clicked, a notification saying “Loading page…” appeared immediately. After a delay of two seconds, the message automatically changed to “Page Loaded!” without stopping or blocking the rest of the application. This shows how JavaScript can execute delayed tasks asynchronously while the program continues running.
+
+3. What happens without preventDefault()?
+
+Without using preventDefault(), clicking a navigation link would cause the browser to reload the page or jump to another location based on the link’s href attribute. This would interrupt the JavaScript execution, reset application state, and prevent dynamic features like notifications, active link highlighting, and animations from working properly.
+
+4. Why is preventDefault() important in single-page applications?
+
+preventDefault() is important in single-page applications because it allows developers to control navigation behavior using JavaScript instead of letting the browser reload the page. This enables smoother transitions, faster interactions, and better user experience. It also allows application state to persist without losing data or reloading the entire interface.
+
+5. What happened when a navigation link was clicked and why did the container event also trigger?
+
+When a navigation link was clicked, both the link’s click event and the container’s click event were triggered. This happened because the click event first occurred on the navigation link and then propagated upward to its parent elements, including the container. This behavior shows how events move through the DOM hierarchy.
+
+6. What is event bubbling?
+
+Event bubbling is a process in which an event starts from the element that triggered it and then propagates upward through its parent elements in the DOM tree. This means that a single user action, such as clicking a button or link, can trigger multiple event listeners attached to parent elements unless propagation is stopped. Event bubbling is useful for handling events efficiently but must be managed carefully to avoid unintended behavior.
+
+7. How does this project demonstrate event-driven programming?
+
+This project demonstrates event-driven programming by responding to user actions such as clicks, menu toggles, and link selections. Each interaction triggers specific event listeners that update the application state, modify the user interface, and execute asynchronous tasks. Instead of running in a fixed sequence, the program reacts dynamically based on events initiated by the user.
+
+
